@@ -76,7 +76,7 @@ export default function() {
               <stop offset="1" stopColor="#ffe406" />
             </linearGradient>
           </defs>
-          <title>face</title>
+          <title>Your emoji</title>
           <motion.g
             id="emoji"
             style={{ transformOrigin: "center" }}

@@ -19,6 +19,14 @@ const Title = styled.h1`
   margin: 0;
 `;
 
+const Version = styled.span`
+  font-size: 1rem;
+  color: #aaa;
+  font-weight: 400;
+  text-align: center;
+  padding: 0 0 8px 0;
+`;
+
 const Subtitle = styled.span`
   font-size: 1rem;
   color: #aaa;
@@ -52,7 +60,9 @@ const Link = styled.a`
 export default () => {
   return (
     <Nav>
-      <Title>Emojiflix</Title>
+      <Title>
+        Emojiflix <Version>1.0</Version>
+      </Title>
       <Subtitle>Emoji playground built with React &amp; SVG</Subtitle>
       <List>
         <Item>

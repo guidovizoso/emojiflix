@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Emojiflix",
+  "name": "Emoji playground built with React & SVG",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,6 +1,6 @@
 {
-  "name": "emojiflix-webapp",
-  "version": "0.1.0",
+  "name": "emojiflix",
+  "version": "1.0",
   "private": true,
   "dependencies": {
     "framer-motion": "^1.6.17",
