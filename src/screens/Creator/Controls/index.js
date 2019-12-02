@@ -78,12 +78,13 @@ export default ({
         <Label>eyes</Label>
         <Control>
           {eyesList.map(e => {
+            let id = e().props.id;
             return (
               <Item
-                key={e.name}
+                key={id}
                 onClick={() => {
-                  console.log("changing eyes to", e.name);
-                  handleSetEyes(e.name);
+                  console.log("changing eyes to", id);
+                  handleSetEyes(id);
                 }}
               >
                 <Svg
@@ -94,7 +95,7 @@ export default ({
                   width="64px"
                   height="64px"
                   viewBox="-10 -10 60 60"
-                  isSelected={selectedEyes === e.name}
+                  isSelected={selectedEyes === id}
                 >
                   <circle cx="20" cy="20" r="20" style={{ fill: "#ffdc0a" }} />
                   {e()}
@@ -108,12 +109,13 @@ export default ({
         <Label>mouth</Label>
         <Control>
           {mouthList.map(e => {
+            let id = e().props.id;
             return (
               <Item
-                key={e.name}
+                key={id}
                 onClick={() => {
-                  console.log("changing mouth to", e.name);
-                  handleSetMouth(e.name);
+                  console.log("changing mouth to", id);
+                  handleSetMouth(id);
                 }}
               >
                 <Svg
@@ -124,7 +126,7 @@ export default ({
                   width="64px"
                   height="64px"
                   viewBox="-10 -10 60 60"
-                  isSelected={selectedMouth === e.name}
+                  isSelected={selectedMouth === id}
                 >
                   <circle cx="20" cy="20" r="20" style={{ fill: "#ffdc0a" }} />
                   {e()}
@@ -138,11 +140,12 @@ export default ({
         <Label>color</Label>
         <Control>
           {colorList.map(e => {
+            let id = e().props.id;
             return (
               <Item
-                key={e.name}
+                key={id}
                 onClick={() => {
-                  let v = e.name === selectedColor ? "none" : e.name;
+                  let v = id === selectedColor ? "none" : id;
                   console.log("changing color to", v);
                   handleSetColor(v);
                 }}
@@ -155,7 +158,7 @@ export default ({
                   width="64px"
                   height="64px"
                   viewBox="-10 -10 60 60"
-                  isSelected={selectedColor === e.name}
+                  isSelected={selectedColor === id}
                 >
                   <circle cx="20" cy="20" r="20" style={{ fill: "#ffdc0a" }} />
                   {e()}
@@ -169,11 +172,12 @@ export default ({
         <Label>effect</Label>
         <Control>
           {effectList.map(e => {
+            let id = e().props.id;
             return (
               <Item
-                key={e.name}
+                key={id}
                 onClick={() => {
-                  let v = e.name === selectedEffect ? "none" : e.name;
+                  let v = id === selectedEffect ? "none" : id;
                   console.log("changing effect to", v);
                   handleSetEffect(v);
                 }}
@@ -186,7 +190,7 @@ export default ({
                   width="64px"
                   height="64px"
                   viewBox="-10 -10 60 60"
-                  isSelected={selectedEffect === e.name}
+                  isSelected={selectedEffect === id}
                 >
                   <circle cx="20" cy="20" r="20" style={{ fill: "#ffdc0a" }} />
                   {e()}
