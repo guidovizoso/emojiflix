@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const Eyes01 = () => {
+const Eyes01 = () => {
   return (
     <motion.g
-      id="eyes01"
+      id="Eyes01"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -16,10 +16,10 @@ export const Eyes01 = () => {
   );
 };
 
-export const Eyes02 = () => {
+const Eyes02 = () => {
   return (
     <motion.g
-      id="eyes02"
+      id="Eyes02"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -35,10 +35,10 @@ export const Eyes02 = () => {
   );
 };
 
-export const Eyes03 = () => {
+const Eyes03 = () => {
   return (
     <motion.g
-      id="eyes03"
+      id="Eyes03"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -71,3 +71,5 @@ export default ({ selected }) => {
     </g>
   );
 };
+
+export const eyesList = [Eyes01, Eyes02, Eyes03];

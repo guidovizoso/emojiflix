@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import Eyes from "./Eyes";
-import Mouth from "./Mouth";
+import Controls from "./Controls";
+import Eyes from "./Face/Eyes";
+import Mouth from "./Face/Mouth";
 
 const Container = styled.div`
   width: 100vw;
@@ -11,6 +12,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 const Border = styled.div`
@@ -26,12 +28,12 @@ export default function() {
   const [rofl, setRofl] = useState(false);
   return (
     <Container>
-      <button onClick={() => setEyes("Eyes01")}>eyes 1</button>
-      <button onClick={() => setEyes("Eyes02")}>eyes 2</button>
-      <button onClick={() => setEyes("Eyes03")}>eyes 3</button>
-      <button onClick={() => setMouth("Mouth01")}>mouth 1</button>
-      <button onClick={() => setMouth("Mouth02")}>mouth 2</button>
-      <button onClick={() => setMouth("Mouth03")}>mouth 3</button>
+      <Controls
+        selectedEyes={eyes}
+        handleSetEyes={setEyes}
+        selectedMouth={mouth}
+        handleSetMouth={setMouth}
+      />
       <button onClick={() => setRofl(!rofl)}>set ROFL mode</button>
       <Border>
         <svg

@@ -1,38 +1,38 @@
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const Mouth01 = () => {
+const Mouth01 = () => {
   return (
     <motion.path
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0 }}
-      id="mouth01"
+      id="Mouth01"
       d="M40.73,40a.18.18,0,0,1,.24,0,.16.16,0,0,1,0,.15c-1.15,3-4.74,5.27-9,5.27s-7.84-2.22-9-5.27a.15.15,0,0,1,.1-.2.18.18,0,0,1,.16,0A15.79,15.79,0,0,0,32,42.32,15.79,15.79,0,0,0,40.73,40Z"
       transform="translate(-12 -12)"
     />
   );
 };
 
-export const Mouth02 = () => {
+const Mouth02 = () => {
   return (
     <motion.path
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       exit={{ opacity: 0 }}
-      id="mouth02"
+      id="Mouth02"
       d="M32,43.16a15.79,15.79,0,0,0-8.73,2.29.18.18,0,0,1-.16,0,.15.15,0,0,1-.1-.2C24.16,42.22,27.75,40,32,40s7.84,2.22,9,5.27a.14.14,0,0,1,0,.14.19.19,0,0,1-.24,0A15.79,15.79,0,0,0,32,43.16Z"
       transform="translate(-12 -12)"
     />
   );
 };
 
-export const Mouth03 = () => {
+const Mouth03 = () => {
   return (
     <motion.g
-      id="mouth03"
+      id="Mouth03"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -67,3 +67,5 @@ export default ({ selected }) => {
     </g>
   );
 };
+
+export const mouthList = [Mouth01, Mouth02, Mouth03];
