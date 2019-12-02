@@ -52,7 +52,7 @@ export const Rofl = () => {
 const UpsideDown = () => {
   return (
     <motion.g
-      id="Color02"
+      id="UpsideDown"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
