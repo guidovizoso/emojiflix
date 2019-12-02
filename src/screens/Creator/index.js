@@ -6,6 +6,7 @@ import Controls from "./Controls";
 import Color from "./Face/Color";
 import Eyes from "./Face/Eyes";
 import Mouth from "./Face/Mouth";
+import Drop from "./Face/Drop";
 
 const Container = styled.div`
   width: 100vw;
@@ -40,6 +41,7 @@ export default function() {
   const [color, setColor] = useState("none");
   const [eyes, setEyes] = useState("Eyes01");
   const [mouth, setMouth] = useState("Mouth01");
+  const [drop, setDrop] = useState("none");
   const [effect, setEffect] = useState("none");
   return (
     <Container>
@@ -50,6 +52,8 @@ export default function() {
         handleSetEyes={setEyes}
         selectedMouth={mouth}
         handleSetMouth={setMouth}
+        selectedDrop={drop}
+        handleSetDrop={setDrop}
         selectedEffect={effect}
         handleSetEffect={setEffect}
       />
@@ -92,6 +96,7 @@ export default function() {
             <Color selected={color} />
             <Eyes selected={eyes} />
             <Mouth selected={mouth} />
+            <Drop selected={drop} />
           </motion.g>
         </svg>
       </Border>

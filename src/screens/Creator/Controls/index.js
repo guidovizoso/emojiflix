@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { colorList } from "../Face/Color";
 import { eyesList } from "../Face/Eyes";
 import { mouthList } from "../Face/Mouth";
+import { dropList } from "../Face/Drop";
 import { effectList } from "../Face/Effect";
 
 const Container = styled.div`
@@ -69,6 +70,8 @@ export default ({
   handleSetEyes,
   selectedMouth,
   handleSetMouth,
+  selectedDrop,
+  handleSetDrop,
   selectedEffect,
   handleSetEffect
 }) => {
@@ -127,6 +130,38 @@ export default ({
                   height="64px"
                   viewBox="-10 -10 60 60"
                   isSelected={selectedMouth === id}
+                >
+                  <circle cx="20" cy="20" r="20" style={{ fill: "#ffdc0a" }} />
+                  {e()}
+                </Svg>
+              </Item>
+            );
+          })}
+        </Control>
+      </Wrapper>
+      <Wrapper>
+        <Label>drop</Label>
+        <Control>
+          {dropList.map(e => {
+            let id = e().props.id;
+            return (
+              <Item
+                key={id}
+                onClick={() => {
+                  let v = id === selectedDrop ? "none" : id;
+                  console.log("changing drop to", v);
+                  handleSetDrop(v);
+                }}
+              >
+                <Svg
+                  id="Layer_1"
+                  data-name="Layer 1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  width="64px"
+                  height="64px"
+                  viewBox="-10 -10 60 60"
+                  isSelected={selectedDrop === id}
                 >
                   <circle cx="20" cy="20" r="20" style={{ fill: "#ffdc0a" }} />
                   {e()}

@@ -93,6 +93,42 @@ const Mouth04 = () => {
   );
 };
 
+const Mouth05 = () => {
+  return (
+    <motion.g
+      id="Mouth05"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+    >
+      <path
+        id="mouth05"
+        d="M24.32,41.89a.8.8,0,0,1,.75-.24c1.16.24,6,1.13,9.91,0,4.43-1.36,6.06-2.81,6.72-3.38s.1.77-.52,1.7-3.63,5.56-16.32,4.14a.81.81,0,0,1-.4-.15A1.51,1.51,0,0,1,24.32,41.89Z"
+        transform="translate(-12 -12)"
+      />
+    </motion.g>
+  );
+};
+
+const Mouth06 = () => {
+  return (
+    <motion.g
+      id="Mouth06"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+    >
+      <path
+        id="mouth06"
+        d="M24.25,41a.6.6,0,0,0,.58.19,17.43,17.43,0,0,1,7.73,0,13.18,13.18,0,0,1,5.25,2.63c.52.44.07-.6-.41-1.33s-2.83-4.33-12.73-3.22a.58.58,0,0,0-.31.11A1.19,1.19,0,0,0,24.25,41Z"
+        transform="translate(-12 -12)"
+      />
+    </motion.g>
+  );
+};
+
 export default ({ selected }) => {
   return (
     <g id="mouth">
@@ -101,9 +137,11 @@ export default ({ selected }) => {
         {selected === "Mouth02" && <Mouth02 key={selected} />}
         {selected === "Mouth03" && <Mouth03 key={selected} />}
         {selected === "Mouth04" && <Mouth04 key={selected} />}
+        {selected === "Mouth05" && <Mouth05 key={selected} />}
+        {selected === "Mouth06" && <Mouth06 key={selected} />}
       </AnimatePresence>
     </g>
   );
 };
 
-export const mouthList = [Mouth01, Mouth02, Mouth03, Mouth04];
+export const mouthList = [Mouth01, Mouth02, Mouth03, Mouth04, Mouth05, Mouth06];

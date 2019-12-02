@@ -110,6 +110,27 @@ const Eyes05 = () => {
   );
 };
 
+const Eyes06 = () => {
+  return (
+    <motion.g
+      id="Eyes06"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+    >
+      <path
+        d="M19.83,28.51a9.1,9.1,0,0,1,6.49-2h0a2,2,0,1,1-2.11,2,2.48,2.48,0,0,1,0-.27C22.06,28.3,19.38,29,19.83,28.51Z"
+        transform="translate(-12 -12)"
+      />
+      <path
+        d="M35.83,28.51a9.1,9.1,0,0,1,6.49-2h0a2,2,0,1,1-2.11,2,2.48,2.48,0,0,1,0-.27C38.06,28.3,35.38,29,35.83,28.51Z"
+        transform="translate(-12 -12)"
+      />
+    </motion.g>
+  );
+};
+
 export default ({ selected }) => {
   return (
     <g id="eyes">
@@ -119,9 +140,10 @@ export default ({ selected }) => {
         {selected === "Eyes03" && <Eyes03 key={selected} />}
         {selected === "Eyes04" && <Eyes04 key={selected} />}
         {selected === "Eyes05" && <Eyes05 key={selected} />}
+        {selected === "Eyes06" && <Eyes06 key={selected} />}
       </AnimatePresence>
     </g>
   );
 };
 
-export const eyesList = [Eyes01, Eyes02, Eyes03, Eyes04, Eyes05];
+export const eyesList = [Eyes01, Eyes02, Eyes03, Eyes04, Eyes05, Eyes06];

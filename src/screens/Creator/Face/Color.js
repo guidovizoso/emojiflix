@@ -12,7 +12,7 @@ const Color01 = () => {
     >
       <defs>
         <linearGradient
-          id="linear-gradient-2"
+          id="angry-grad"
           x1="20"
           y1="39.52"
           x2="20"
@@ -30,7 +30,7 @@ const Color01 = () => {
         cx="20"
         cy="20"
         r="20"
-        style={{ fill: "url(#linear-gradient-2)" }}
+        style={{ fill: "url(#angry-grad)" }}
       />
     </motion.g>
   );
@@ -47,7 +47,7 @@ const Color02 = () => {
     >
       <defs>
         <linearGradient
-          id="linear-gradient-3"
+          id="blue-grad"
           x1="20"
           y1="39.52"
           x2="20"
@@ -65,7 +65,42 @@ const Color02 = () => {
         cx="20"
         cy="20"
         r="20"
-        style={{ fill: "url(#linear-gradient-3)" }}
+        style={{ fill: "url(#blue-grad)" }}
+      />
+    </motion.g>
+  );
+};
+
+const Color03 = () => {
+  return (
+    <motion.g
+      id="Color03"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+    >
+      <defs>
+        <linearGradient
+          id="sick-grad"
+          x1="20.03"
+          y1="39.62"
+          x2="20.03"
+          y2="0.38"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#ffce10" stopOpacity="0" />
+          <stop offset="0.7" stopColor="#b8e602" stopOpacity="0.73" />
+          <stop offset="1" stopColor="#b8e602" />
+        </linearGradient>
+      </defs>
+
+      <circle
+        id="sick"
+        cx="20"
+        cy="20"
+        r="20"
+        style={{ fill: "url(#sick-grad)" }}
       />
     </motion.g>
   );
@@ -77,9 +112,10 @@ export default ({ selected }) => {
       <AnimatePresence>
         {selected === "Color01" && <Color01 key={selected} />}
         {selected === "Color02" && <Color02 key={selected} />}
+        {selected === "Color03" && <Color03 key={selected} />}
       </AnimatePresence>
     </g>
   );
 };
 
-export const colorList = [Color01, Color02];
+export const colorList = [Color01, Color02, Color03];
