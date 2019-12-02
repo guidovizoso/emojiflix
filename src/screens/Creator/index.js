@@ -3,38 +3,55 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 import Controls from "./Controls";
+import Color from "./Face/Color";
 import Eyes from "./Face/Eyes";
 import Mouth from "./Face/Mouth";
 
 const Container = styled.div`
   width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  flex-direction: column-reverse;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const Border = styled.div`
+  background-color: #fff;
   border: 1px solid #eee;
   width: 100%;
-  max-width: 400px;
-  padding: 24px 48px;
+  padding: 24px;
+  margin-left: 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+  height: 300px;
+
+  @media (min-width: 768px) {
+    margin-left: 48px;
+    max-width: 400px;
+    padding: 24px 48px;
+    height: auto;
+  }
 `;
 
 export default function() {
+  const [color, setColor] = useState("none");
   const [eyes, setEyes] = useState("Eyes01");
   const [mouth, setMouth] = useState("Mouth01");
-  const [rofl, setRofl] = useState(false);
+  const [effect, setEffect] = useState("none");
   return (
     <Container>
       <Controls
+        selectedColor={color}
+        handleSetColor={setColor}
         selectedEyes={eyes}
         handleSetEyes={setEyes}
         selectedMouth={mouth}
         handleSetMouth={setMouth}
-        rofl={rofl}
-        handleSetRofl={setRofl}
+        selectedEffect={effect}
+        handleSetEffect={setEffect}
       />
       <Border>
         <svg
@@ -55,15 +72,15 @@ export default function() {
               y2="0.29"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset="0" stop-color="#ffce10" />
-              <stop offset="1" stop-color="#ffe406" />
+              <stop offset="0" stopColor="#ffce10" />
+              <stop offset="1" stopColor="#ffe406" />
             </linearGradient>
           </defs>
           <title>face</title>
           <motion.g
             id="emoji"
             style={{ transformOrigin: "center" }}
-            animate={rofl ? "isRofl" : "isNotRofl"}
+            animate={effect}
             variants={variants}
           >
             <circle
@@ -72,6 +89,7 @@ export default function() {
               r="20"
               style={{ fill: "url(#linear-gradient)" }}
             />
+            <Color selected={color} />
             <Eyes selected={eyes} />
             <Mouth selected={mouth} />
           </motion.g>
@@ -82,6 +100,7 @@ export default function() {
 }
 
 const variants = {
-  isRofl: { rotate: "-45deg" },
-  isNotRofl: { rotate: "0deg" }
+  none: { rotate: "0deg" },
+  Rofl: { rotate: "-45deg" },
+  UpsideDown: { rotate: "-180deg" }
 };

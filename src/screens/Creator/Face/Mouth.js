@@ -56,6 +56,43 @@ const Mouth03 = () => {
   );
 };
 
+const Mouth04 = () => {
+  return (
+    <motion.g
+      id="Mouth04"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      exit={{ opacity: 0 }}
+    >
+      <defs>
+        <linearGradient
+          id="tongue"
+          x1="31.98"
+          y1="55.6"
+          x2="31.98"
+          y2="40.67"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stopColor="#fe7384" />
+          <stop offset="0.49" stopColor="#e96471" />
+          <stop offset="0.72" stopColor="#c64c53" />
+          <stop offset="1" stopColor="#7d1712" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M42.56,37.13A35.61,35.61,0,0,1,32,38.29h0a35.61,35.61,0,0,1-10.57-1.16c-4.53-1.44,1,10.12,10.57,10.14h0C41.56,47.25,47.09,35.69,42.56,37.13Z"
+        transform="translate(-12 -12)"
+      />
+      <path
+        d="M37.71,41.41c-1.83-1.24-4.54-.61-5.43-.35a1,1,0,0,1-.59,0c-.89-.26-3.6-.89-5.43.35-1.29.93-.57,7.64,0,9.5S29,55.59,32,55.6h0c3,0,5.14-2.84,5.71-4.69S39,42.34,37.71,41.41Z"
+        transform="translate(-12 -12)"
+        style={{ fill: "url(#tongue" }}
+      />
+    </motion.g>
+  );
+};
+
 export default ({ selected }) => {
   return (
     <g id="mouth">
@@ -63,9 +100,10 @@ export default ({ selected }) => {
         {selected === "Mouth01" && <Mouth01 key={selected} />}
         {selected === "Mouth02" && <Mouth02 key={selected} />}
         {selected === "Mouth03" && <Mouth03 key={selected} />}
+        {selected === "Mouth04" && <Mouth04 key={selected} />}
       </AnimatePresence>
     </g>
   );
 };
 
-export const mouthList = [Mouth01, Mouth02, Mouth03];
+export const mouthList = [Mouth01, Mouth02, Mouth03, Mouth04];
