@@ -12,14 +12,14 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 `;
 
 const Border = styled.div`
   border: 1px solid #eee;
-  width: 50%;
-  height: 50%;
-  padding: 5%;
+  width: 100%;
+  max-width: 400px;
+  padding: 24px 48px;
 `;
 
 export default function() {
@@ -33,8 +33,9 @@ export default function() {
         handleSetEyes={setEyes}
         selectedMouth={mouth}
         handleSetMouth={setMouth}
+        rofl={rofl}
+        handleSetRofl={setRofl}
       />
-      <button onClick={() => setRofl(!rofl)}>set ROFL mode</button>
       <Border>
         <svg
           id="Layer_1"
@@ -43,7 +44,7 @@ export default function() {
           xmlnsXlink="http://www.w3.org/1999/xlink"
           width="100%"
           height="100%"
-          viewBox="0 0 40 40"
+          viewBox="-10 -10 60 60"
         >
           <defs>
             <linearGradient
