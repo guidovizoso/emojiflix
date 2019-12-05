@@ -61,7 +61,7 @@ export default () => {
   return (
     <Nav>
       <Title>
-        Emojiflix <Version>1.0</Version>
+        Emojiflix <Version>1.1</Version>
       </Title>
       <Subtitle>Emoji playground built with React &amp; SVG</Subtitle>
       <List>

@@ -12,8 +12,12 @@ const Container = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 400px;
-  height: 400px;
   overflow-y: scroll;
+  height: 45vh;
+
+  @media (min-width: 768px) {
+    height: 400px;
+  }
 `;
 
 const Wrapper = styled.div`
